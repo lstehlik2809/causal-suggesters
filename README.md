@@ -69,7 +69,7 @@ Ollama runs locally and needs no API key — just have the Ollama server running
 |---|---|---|
 | Anthropic | `"claude-opus-4-6"` | `ANTHROPIC_API_KEY` |
 | OpenAI | `"gpt-5.4"` | `OPENAI_API_KEY` |
-| Google | `"gemini/gemini-2.5-pro"` | `GEMINI_API_KEY` |
+| Google | `"gemini/gemini-3.1-pro-preview"` | `GEMINI_API_KEY` |
 | Ollama (local) | `"ollama/llama4"` | None |
 
 See [LiteLLM docs](https://docs.litellm.ai/docs/providers) for the full list of 100+ supported providers.
