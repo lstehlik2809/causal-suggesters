@@ -1,6 +1,6 @@
 # Causal Suggesters
 
-LLM-agnostic causal inference suggester library. Replicates [pywhyllm](https://github.com/py-why/pywhyllm)'s four suggester classes but works with **any LLM** supported by LiteLLM — Claude, GPT, Gemini, Mistral, Llama via Ollama, and others.
+LLM-agnostic causal inference suggester library. Replicates [pywhyllm](https://github.com/py-why/pywhyllm)'s four suggester classes but works with **any LLM** supported by LiteLLM — Claude, GPT, Gemini, Llama via Ollama, and others.
 
 ## Architecture
 
@@ -67,24 +67,12 @@ Ollama runs locally and needs no API key — just have the Ollama server running
 
 | Provider | Model string example | API key env var |
 |---|---|---|
-| Anthropic | `"claude-sonnet-4-20250514"` | `ANTHROPIC_API_KEY` |
-| OpenAI | `"gpt-4o"` | `OPENAI_API_KEY` |
-| Google | `"gemini/gemini-2.0-flash"` | `GEMINI_API_KEY` |
-| Ollama (local) | `"ollama/llama3.2"` | None |
-| Mistral | `"mistral/mistral-large-latest"` | `MISTRAL_API_KEY` |
+| Anthropic | `"claude-opus-4-6"` | `ANTHROPIC_API_KEY` |
+| OpenAI | `"gpt-5.4"` | `OPENAI_API_KEY` |
+| Google | `"gemini/gemini-2.5-pro"` | `GEMINI_API_KEY` |
+| Ollama (local) | `"ollama/llama4"` | None |
 
 See [LiteLLM docs](https://docs.litellm.ai/docs/providers) for the full list of 100+ supported providers.
-
-### Model selection guidance
-
-| Use case | Recommended |
-|---|---|
-| Best accuracy, complex DAGs | `claude-sonnet-4-20250514` or `gpt-4o` |
-| Fast iteration, development | `gemini/gemini-2.0-flash` |
-| Fully local / private data | `ollama/llama3.3` (70B) |
-| Budget / high volume | `claude-haiku-4-5-20251001` |
-
-Smaller models (sub-8B) struggle with causal identification precision. Use 30B+ locally for reliable results.
 
 ## The Four Suggesters
 
@@ -155,7 +143,7 @@ from causal_suggesters import (
 )
 
 # Choose your model
-MODEL = "claude-sonnet-4-20250514"
+MODEL = "claude-opus-4-6"
 
 # --- Define the causal analysis problem ---
 all_factors = [
